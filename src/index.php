@@ -9,6 +9,7 @@ class Remonline
     public $tokenInfo;
     private $client;
     private $type;
+    private $lifeTimeToken = 600;
 
     public function __construct($apiKey)
     {
@@ -78,7 +79,7 @@ class Remonline
 
     private function checkToken()
     {
-        if (isset($this->tokenInfo['token']) && (time() - $this->tokenInfo['time'] <= 600)) {
+        if (isset($this->tokenInfo['token']) && (time() - $this->tokenInfo['time'] <= $this->lifeTimeToken)) {
             return true;
         }
         $this->getToken();
