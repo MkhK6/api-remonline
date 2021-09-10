@@ -80,8 +80,7 @@ class Remonline
     {
         if (isset($this->tokenInfo['token']) && (time() - $this->tokenInfo['time'] <= 600)) {
             return true;
-        } else {
-            $this->getToken();
         }
+        $this->getToken();
     }
 }
