@@ -39,5 +39,5 @@ $newContact = $Remonline->contact($params);
 
 ```php
 $Remonline = new Remonline('api_key'); // api_key пользователя
-$newContact = $Remonline->order(); // Обратите внимание, передавать ничего не нужно
+$newOrder = $Remonline->order(); // Обратите внимание, передавать ничего не нужно
 ```
